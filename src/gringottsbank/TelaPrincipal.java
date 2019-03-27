@@ -40,7 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(32, 73, 135));
         jButton1.setText("GERAR");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/vinicius/Downloads/TelaInicial/TelaInicial.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gringottsbank/TelaInicial.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
