@@ -5,6 +5,11 @@
  */
 package gringottsbank;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vinicius
@@ -18,6 +23,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         setSize(1120,768);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        Date lbldata = new Date();
+                            SimpleDateFormat formatadors = new SimpleDateFormat("dd/MM/yyyy");
+                            jFormattedTextField1.setText(formatadors.format(lbldata));
     }
 
     /**
@@ -29,10 +39,88 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        bntGerarSenha = new javax.swing.JButton();
+        Prioritario = new javax.swing.JCheckBox();
+        Lux = new javax.swing.JCheckBox();
+        Gold = new javax.swing.JCheckBox();
+        Standart = new javax.swing.JCheckBox();
+        Basic = new javax.swing.JCheckBox();
+        LabelExibirSenha = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
+
+        bntGerarSenha.setFont(new java.awt.Font("Open Sans", 1, 24)); // NOI18N
+        bntGerarSenha.setText("Gerar Senha");
+        bntGerarSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntGerarSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bntGerarSenha);
+        bntGerarSenha.setBounds(390, 570, 360, 140);
+
+        buttonGroup1.add(Prioritario);
+        Prioritario.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        Prioritario.setForeground(new java.awt.Color(255, 242, 0));
+        Prioritario.setText("PRIORITARIO");
+        getContentPane().add(Prioritario);
+        Prioritario.setBounds(100, 370, 120, 30);
+
+        buttonGroup1.add(Lux);
+        Lux.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        Lux.setForeground(new java.awt.Color(253, 205, 18));
+        Lux.setText("GB LUX");
+        Lux.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LuxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Lux);
+        Lux.setBounds(100, 420, 110, 30);
+
+        buttonGroup1.add(Gold);
+        Gold.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        Gold.setForeground(new java.awt.Color(255, 217, 0));
+        Gold.setText("GB GOLD");
+        Gold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Gold);
+        Gold.setBounds(100, 470, 90, 30);
+
+        buttonGroup1.add(Standart);
+        Standart.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        Standart.setForeground(new java.awt.Color(245, 204, 20));
+        Standart.setText("GB STANDART");
+        getContentPane().add(Standart);
+        Standart.setBounds(100, 520, 120, 30);
+
+        buttonGroup1.add(Basic);
+        Basic.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        Basic.setForeground(new java.awt.Color(250, 230, 1));
+        Basic.setText("GB BASIC");
+        getContentPane().add(Basic);
+        Basic.setBounds(100, 560, 110, 30);
+
+        LabelExibirSenha.setForeground(new java.awt.Color(247, 255, 0));
+        LabelExibirSenha.setText("SENHA");
+        getContentPane().add(LabelExibirSenha);
+        LabelExibirSenha.setBounds(530, 410, 50, 50);
+
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jFormattedTextField1);
+        jFormattedTextField1.setBounds(1010, 700, 100, 29);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gringottsbank/TelaInicial.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -40,6 +128,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bntGerarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntGerarSenhaActionPerformed
+        if(Basic.isSelected()!=true&&Gold.isSelected()!=true&&Lux.isSelected()!=true&&Prioritario.isSelected()!=true&&Standart.isSelected()!=true){
+            JOptionPane.showMessageDialog(this,"SELECIONE UM TIPO DE CLIENTE!");
+        }
+        
+          
+        
+    }//GEN-LAST:event_bntGerarSenhaActionPerformed
+
+    private void LuxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LuxActionPerformed
+
+    private void GoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GoldActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,6 +186,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox Basic;
+    private javax.swing.JCheckBox Gold;
+    private javax.swing.JLabel LabelExibirSenha;
+    private javax.swing.JCheckBox Lux;
+    private javax.swing.JCheckBox Prioritario;
+    private javax.swing.JCheckBox Standart;
+    private javax.swing.JButton bntGerarSenha;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
