@@ -16,9 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaPrincipal
-     */
+    static Fila fila = new Fila();
     public TelaPrincipal() {
         initComponents();
         this.setResizable(false);
@@ -48,7 +46,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Basic = new javax.swing.JCheckBox();
         LabelExibirSenha = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jLabel1 = new javax.swing.JLabel();
+        TextoTipo = new javax.swing.JLabel();
+        ChamarSenhas = new javax.swing.JButton();
+        FundoFoto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -108,10 +108,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(Basic);
         Basic.setBounds(100, 560, 110, 30);
 
-        LabelExibirSenha.setForeground(new java.awt.Color(247, 255, 0));
-        LabelExibirSenha.setText("SENHA");
+        LabelExibirSenha.setFont(new java.awt.Font("Open Sans", 1, 48)); // NOI18N
+        LabelExibirSenha.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(LabelExibirSenha);
-        LabelExibirSenha.setBounds(530, 410, 50, 50);
+        LabelExibirSenha.setBounds(480, 410, 200, 50);
 
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
         jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,9 +122,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jFormattedTextField1);
         jFormattedTextField1.setBounds(1010, 700, 100, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gringottsbank/TelaInicial.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1120, 768);
+        TextoTipo.setFont(new java.awt.Font("Open Sans", 1, 16)); // NOI18N
+        TextoTipo.setForeground(new java.awt.Color(252, 255, 0));
+        TextoTipo.setText("SELECIONE SEU TIPO DE CLIENTE:");
+        getContentPane().add(TextoTipo);
+        TextoTipo.setBounds(20, 340, 270, 23);
+
+        ChamarSenhas.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        ChamarSenhas.setText("Chamar Senhas");
+        getContentPane().add(ChamarSenhas);
+        ChamarSenhas.setBounds(920, 420, 170, 32);
+
+        FundoFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gringottsbank/TelaInicial.png"))); // NOI18N
+        getContentPane().add(FundoFoto);
+        FundoFoto.setBounds(0, 0, 1120, 768);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,7 +144,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if(Basic.isSelected()!=true&&Gold.isSelected()!=true&&Lux.isSelected()!=true&&Prioritario.isSelected()!=true&&Standart.isSelected()!=true){
             JOptionPane.showMessageDialog(this,"SELECIONE UM TIPO DE CLIENTE!");
         }
-        
+        if(Prioritario.isSelected()){
+            fila.adicionar("A00"+fila.A);
+            LabelExibirSenha.setText("A00"+fila.A);
+            fila.A++; 
+        }else if(Lux.isSelected()){
+            fila.adicionar("B00"+fila.B);
+            LabelExibirSenha.setText("B00"+fila.B);
+            fila.B++;
+        }else if(Gold.isSelected()){
+            fila.adicionar("C00"+fila.C);
+            LabelExibirSenha.setText("C00"+fila.C);
+            fila.C++;
+        }else if(Standart.isSelected()){
+            fila.adicionar("D00"+fila.D);
+            LabelExibirSenha.setText("D00"+fila.D);
+            fila.D++;
+        }else if(Basic.isSelected()){
+            fila.adicionar("E00"+fila.E);
+            LabelExibirSenha.setText("E00"+fila.E);
+            fila.E++;
+        }
+       
+       //desmarcando tudo!
+        buttonGroup1.clearSelection();
           
         
     }//GEN-LAST:event_bntGerarSenhaActionPerformed
@@ -187,14 +221,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox Basic;
+    private javax.swing.JButton ChamarSenhas;
+    private javax.swing.JLabel FundoFoto;
     private javax.swing.JCheckBox Gold;
     private javax.swing.JLabel LabelExibirSenha;
     private javax.swing.JCheckBox Lux;
     private javax.swing.JCheckBox Prioritario;
     private javax.swing.JCheckBox Standart;
+    private javax.swing.JLabel TextoTipo;
     private javax.swing.JButton bntGerarSenha;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
