@@ -85,6 +85,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(bntGerarSenha);
         bntGerarSenha.setBounds(400, 590, 300, 90);
 
+        Prioritario.setBackground(new java.awt.Color(51, 51, 255));
         buttonGroup1.add(Prioritario);
         Prioritario.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         Prioritario.setForeground(new java.awt.Color(255, 242, 0));
@@ -92,6 +93,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(Prioritario);
         Prioritario.setBounds(100, 370, 120, 30);
 
+        Lux.setBackground(new java.awt.Color(51, 51, 255));
         buttonGroup1.add(Lux);
         Lux.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         Lux.setForeground(new java.awt.Color(255, 242, 0));
@@ -104,6 +106,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(Lux);
         Lux.setBounds(100, 420, 110, 30);
 
+        Gold.setBackground(new java.awt.Color(51, 51, 255));
         buttonGroup1.add(Gold);
         Gold.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         Gold.setForeground(new java.awt.Color(255, 242, 0));
@@ -116,6 +119,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(Gold);
         Gold.setBounds(100, 470, 110, 30);
 
+        Standart.setBackground(new java.awt.Color(51, 51, 255));
         buttonGroup1.add(Standart);
         Standart.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         Standart.setForeground(new java.awt.Color(255, 242, 0));
@@ -123,6 +127,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.add(Standart);
         Standart.setBounds(100, 520, 150, 30);
 
+        Basic.setBackground(new java.awt.Color(51, 51, 255));
         buttonGroup1.add(Basic);
         Basic.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         Basic.setForeground(new java.awt.Color(255, 242, 0));
@@ -139,7 +144,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TextoTipo.setForeground(new java.awt.Color(255, 242, 0));
         TextoTipo.setText("TIPO DE CLIENTE");
         jPanel1.add(TextoTipo);
-        TextoTipo.setBounds(80, 320, 200, 30);
+        TextoTipo.setBounds(60, 310, 220, 30);
 
         data.setFont(new java.awt.Font("Open Sans", 1, 48)); // NOI18N
         data.setForeground(new java.awt.Color(255, 242, 0));
